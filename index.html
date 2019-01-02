@@ -12,30 +12,50 @@
 <a-scene>
 
 <a-assets>
-
+  <a-mixin id="wall"
+    geometry="primitive: plane; height: 4; width: 8"
+    material="color: #aaaa99"
+  ></a-mixin>
+  <a-mixin id="floor"
+    geometry="primitive: plane; height: 8; width: 8"
+    rotation="-90 0 0"
+    material="color: #222222; roughness: 0.7"
+  ></a-mixin>
+  <a-mixin id="ceiling"
+    geometry="primitive: plane; height: 8; width: 8"
+    rotation="90 0 0"
+    material="color:#e3e0dd"
+    position="0 4 0"
+  ></a-mixin>
 </a-assets>
 
 <a-entity
-  position="0 2.25 -15"
-  particle-system="color:#000888">
-</a-entity>
+  mixin="floor"
+  position="0 0 0"
+></a-entity>
+<a-entity
+  mixin="wall"
+  position="0 2 -4"
+></a-entity>
+<a-entity
+  mixin="wall"
+  position="0 2 4"
+  rotation="0 180 0"
+></a-entity>
+<a-entity
+  mixin="wall"
+  position="-4 2 0"
+  rotation="0 90 0"
+></a-entity>
+<a-entity
+  mixin="wall"
+  position="4 2 0"
+  rotation="0 -90 0"
+></a-entity>
+<a-entity
+  mixin="ceiling"
+></a-entity>
 
-<a-plane
-  name="floor"
-  position="0 0 -3"
-  rotation="-90 0 0"
-  width="4"
-  height="8"
-  color="#223244"
-></a-plane>
-<a-box
-  name="door"
-  position="0 1 -7"
-  height="4"
-  width="1.5"
-  depth="0.1"
-  color="#220011"
-></a-box>
 
 </a-scene>
 

@@ -5,7 +5,6 @@
 <meta charset="utf-8">
 <title>Bathroom Attendant VR</title>
 <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-<script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
 </head>
 
 <body>
@@ -13,47 +12,48 @@
 
 <a-assets>
   <a-mixin id="wall"
-    geometry="primitive: plane; height: 4; width: 8"
+    geometry="primitive: plane; height: 2.5; width: 5"
     material="color: #aaaa99"
   ></a-mixin>
   <a-mixin id="floor"
-    geometry="primitive: plane; height: 8; width: 8"
+    geometry="primitive: plane; height: 5; width: 5"
     rotation="-90 0 0"
     material="color: #222222; roughness: 0.7"
+    position="0 0 0"
   ></a-mixin>
   <a-mixin id="ceiling"
-    geometry="primitive: plane; height: 8; width: 8"
+    geometry="primitive: plane; height: 5; width: 5"
     rotation="90 0 0"
-    material="color:#e3e0dd"
-    position="0 4 0"
+    material="color: #e3e0dd"
+    position="0 2.5 0"
   ></a-mixin>
+  <a-asset-item id="handdryer" src="/assets/models/handdryer.gltf"></a-asset-item>
 </a-assets>
 
-<a-entity
-  mixin="floor"
-  position="0 0 0"
+<a-entity mixin="floor"></a-entity>
+<a-entity mixin="wall"
+  position="0 1.25 -2.5"
 ></a-entity>
-<a-entity
-  mixin="wall"
-  position="0 2 -4"
-></a-entity>
-<a-entity
-  mixin="wall"
-  position="0 2 4"
+<a-entity mixin="wall"
+  position="0 1.25 2.5"
   rotation="0 180 0"
 ></a-entity>
-<a-entity
-  mixin="wall"
-  position="-4 2 0"
+<a-entity mixin="wall"
+  position="-2.5 1.25 0"
   rotation="0 90 0"
 ></a-entity>
-<a-entity
-  mixin="wall"
-  position="4 2 0"
+<a-entity mixin="wall"
+  position="2.5 1.25 0"
   rotation="0 -90 0"
 ></a-entity>
+
+<a-entity mixin="ceiling"></a-entity>
+
 <a-entity
-  mixin="ceiling"
+  id="handy"
+  gltf-model="#handdryer"
+  position="2.42 1.2 0"
+  rotation="0 -90 0"
 ></a-entity>
 
 

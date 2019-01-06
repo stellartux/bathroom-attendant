@@ -25,7 +25,7 @@
   <a-mixin id="ceiling"
     geometry="primitive: plane; height: 5; width: 5"
     rotation="90 0 0"
-    material="color: #e3e0dd"
+    material="src: templates/artex.png; repeat: 5 10; roughness: 0.74; metalness: 0"
     position="0 2.5 0"
   ></a-mixin>
   <a-mixin id="shiny"
@@ -38,18 +38,18 @@
 </a-assets>
 
 <a-entity mixin="floor"></a-entity>
-<a-entity template="src: templates/wall.template"
+<a-entity template="src: templates/wall.html"
   position="0 0 -2.5"
 ></a-entity>
-<a-entity template="src: templates/wall.template"
+<a-entity template="src: templates/wall.html"
   position="0 0 2.5"
   rotation="0 180 0"
 ></a-entity>
-<a-entity template="src: templates/wall.template"
+<a-entity template="src: templates/wall.html"
   position="-2.5 0 0"
   rotation="0 90 0"
 ></a-entity>
-<a-entity template="src: templates/wall.template"
+<a-entity template="src: templates/wall.html"
   position="2.5 0 0"
   rotation="0 -90 0"
 ></a-entity>
@@ -75,9 +75,13 @@
   depth="0.04"
 ></a-box>
 
-<a-entity light="type: ambient; color: #fff8d8; intensity: 0.15"></a-entity>
-<a-entity light="type: point; color: #fff8d8; intensity: 0.35" position="0 2 -0.8"></a-entity>
-<a-entity light="type: point; color: #fff8d8; intensity: 0.35" position="0 2 -1.2"></a-entity>
+
+<a-entity template="src: templates/light.html" position="1.5 0 1.25"></a-entity>
+<a-entity template="src: templates/light.html" position="1.5 0 -1.25"></a-entity>
+<a-entity template="src: templates/light.html" position="-1.5 0 1.25"></a-entity>
+
+<a-entity template="src: templates/broken-light.html" position="-1.5 0 -1.25"></a-entity>
+<a-entity light="type: ambient; color: #fff; intensity: 0.15"></a-entity>
 
 </a-scene>
 

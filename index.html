@@ -5,6 +5,7 @@
 <meta charset="utf-8">
 <title>Bathroom Attendant VR</title>
 <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+<script src="https://unpkg.com/aframe-template-component/dist/aframe-template-component.min.js"></script>
 </head>
 
 <body>
@@ -37,19 +38,19 @@
 </a-assets>
 
 <a-entity mixin="floor"></a-entity>
-<a-entity mixin="wall"
-  position="0 1.25 -2.5"
+<a-entity template="src: templates/wall.template"
+  position="0 0 -2.5"
 ></a-entity>
-<a-entity mixin="wall"
-  position="0 1.25 2.5"
+<a-entity template="src: templates/wall.template"
+  position="0 0 2.5"
   rotation="0 180 0"
 ></a-entity>
-<a-entity mixin="wall"
-  position="-2.5 1.25 0"
+<a-entity template="src: templates/wall.template"
+  position="-2.5 0 0"
   rotation="0 90 0"
 ></a-entity>
-<a-entity mixin="wall"
-  position="2.5 1.25 0"
+<a-entity template="src: templates/wall.template"
+  position="2.5 0 0"
   rotation="0 -90 0"
 ></a-entity>
 <a-entity mixin="ceiling"></a-entity>
@@ -74,9 +75,9 @@
   depth="0.04"
 ></a-box>
 
-<a-entity light="type: ambient; color: #fff8d8; intensity: 0.2"></a-entity>
-<a-entity light="type: point; color: #fff8d8; intensity: 0.3" position="0 2 -0.8"></a-entity>
-<a-entity light="type: point; color: #fff8d8; intensity: 0.3" position="0 2 -1.2"></a-entity>
+<a-entity light="type: ambient; color: #fff8d8; intensity: 0.15"></a-entity>
+<a-entity light="type: point; color: #fff8d8; intensity: 0.35" position="0 2 -0.8"></a-entity>
+<a-entity light="type: point; color: #fff8d8; intensity: 0.35" position="0 2 -1.2"></a-entity>
 
 </a-scene>
 

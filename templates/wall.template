@@ -1,0 +1,12 @@
+<a-entity position="0 0 0">
+  <a-entity
+    geometry="primitive: plane; height: 1.6; width: 5;"
+    material="color: #e0d8ca;"
+    position="0 1.7 0"
+  ></a-entity>
+  <a-entity
+    geometry="primitive: plane; height: 0.9; width: 5;"
+    position="0 0.45 0.003"
+    material="src: https://raw.githubusercontent.com/stellartux/bathroom-attendant/master/templates/wall-tile.png; repeat: 25 5; normalMap: https://raw.githubusercontent.com/stellartux/bathroom-attendant/master/templates/wall-tile-normal.png; normalTextureRepeat: 25 5"
+  ></a-entity>
+</a-entity>

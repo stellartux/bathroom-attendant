@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <title>Bathroom Attendant VR</title>
-<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+<script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
 </head>
 
 <body>
@@ -27,7 +27,13 @@
     material="color: #e3e0dd"
     position="0 2.5 0"
   ></a-mixin>
-  <a-asset-item id="handdryer" src="https://raw.githubusercontent.com/stellartux/bathroom-attendant/master/assets/models/handdryer.glb"></a-asset-item>
+  <a-mixin id="shiny"
+    material="metalness: 0.6; color: #ddd; roughness: 0.7;"
+  ></a-mixin>
+
+  <!-- https://raw.githubusercontent.com/stellartux/bathroom-attendant/master -->
+  <a-asset-item id="handdryer" src="https://raw.githubusercontent.com/stellartux/bathroom-attendant/master/assets/models/handdryer-body.gltf"></a-asset-item>
+
 </a-assets>
 
 <a-entity mixin="floor"></a-entity>
@@ -46,16 +52,31 @@
   position="2.5 1.25 0"
   rotation="0 -90 0"
 ></a-entity>
-
 <a-entity mixin="ceiling"></a-entity>
 
 <a-entity
-  id="handy"
   gltf-model="#handdryer"
-  position="2.42 1.2 0"
-  rotation="0 -90 0"
-></a-entity>
+  position="0 1.2 -2.52"
+  rotation="90 90 90"
+  ></a-entity>
+<a-box
+  mixin="shiny"
+  position="0.065 1.17 -2.4"
+  width="0.065"
+  height="0.04"
+  depth="0.04"
+></a-box>
+<a-box
+  mixin="shiny"
+  position="0.065 1.17 -2.41"
+  width="0.075"
+  height="0.05"
+  depth="0.04"
+></a-box>
 
+<a-entity light="type: ambient; color: #fff8d8; intensity: 0.2"></a-entity>
+<a-entity light="type: point; color: #fff8d8; intensity: 0.3" position="0 2 -0.8"></a-entity>
+<a-entity light="type: point; color: #fff8d8; intensity: 0.3" position="0 2 -1.2"></a-entity>
 
 </a-scene>
 

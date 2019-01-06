@@ -75,4 +75,5 @@ typings/
 # FuseBox cache
 .fusebox/
 
-assets/stl
+*.stl
+potential-assets/

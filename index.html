@@ -6,6 +6,10 @@
 <title>Bathroom Attendant VR</title>
 <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
 <script src="https://unpkg.com/aframe-template-component/dist/aframe-template-component.min.js"></script>
+<script src="https://unpkg.com/three/examples/js/loaders/STLLoader.js" charset="utf-8"></script>
+<script src="https://unpkg.com/aframe-gltf-part-component/dist/aframe-gltf-part-component.min.js"></script>
+<script src="https://unpkg.com/aframe-animation-component/dist/aframe-animation-component.min.js" charset="utf-8"></script>
+<script src="primitives/aframe-led-primitive.js" charset="utf-8"></script>
 </head>
 
 <body>
@@ -34,7 +38,7 @@
 
   <!-- https://raw.githubusercontent.com/stellartux/bathroom-attendant/master -->
   <a-asset-item id="handdryer" src="https://raw.githubusercontent.com/stellartux/bathroom-attendant/master/assets/models/handdryer-body.gltf"></a-asset-item>
-
+  <a-asset-item id="smokedetector" src="https://raw.githubusercontent.com/stellartux/bathroom-attendant/master/assets/models/smokedetector.obj"></a-asset-item>
 </a-assets>
 
 <a-entity mixin="floor"></a-entity>
@@ -56,6 +60,7 @@
 <a-entity mixin="ceiling"></a-entity>
 
 <a-entity
+  id="toastyboi"
   gltf-model="#handdryer"
   position="0 1.2 -2.52"
   rotation="90 90 90"
@@ -75,13 +80,31 @@
   depth="0.04"
 ></a-box>
 
+<a-entity
+  id="smokeyboi"
+  obj-model="obj: #smokedetector"
+  scale="0.001 0.001 0.001"
+  position="1 2.5 -1.5"
+  rotation="90 0 0"
+  material="color: #fff; roughness: 0.5; metalness: 0.4;"
+>
+  <a-led id="led" position="22 -7 25" scale="1000 1000 1000"></a-led>
+</a-entity>
 
-<a-entity template="src: templates/light.html" position="1.5 0 1.25"></a-entity>
-<a-entity template="src: templates/light.html" position="1.5 0 -1.25"></a-entity>
-<a-entity template="src: templates/light.html" position="-1.5 0 1.25"></a-entity>
 
-<a-entity template="src: templates/broken-light.html" position="-1.5 0 -1.25"></a-entity>
-<a-entity light="type: ambient; color: #fff; intensity: 0.15"></a-entity>
+<!--
+position="0 1.6 -0.1"
+rotation="0 0 0"
+
+
+-->
+
+<a-entity template="src: templates/light.html" position="1.5 2.45 1.25"></a-entity>
+<a-entity template="src: templates/light.html" position="1.5 2.45 -1.25"></a-entity>
+<a-entity template="src: templates/light.html" position="-1.5 2.45 1.25"></a-entity>
+
+<a-entity template="src: templates/broken-light.html" position="-1.5 2.45 -1.25"></a-entity>
+<a-entity light="type: ambient; intensity: 0.1"></a-entity>
 
 </a-scene>
 
